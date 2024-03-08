@@ -15,46 +15,28 @@ import com.nt.surya.service.ContactService;
 @RestController
 public class ContactRestController {
 
-	
 	@Autowired
 	private ContactService service;
-	
+
 	@PostMapping("/save")
 	public String saveContact(@RequestBody ContactForm form) {
 		System.out.println(form);
-		String status = service.saveContact(form);
-		return status;
+		return service.saveContact(form);
 	}
-	
+
 	@GetMapping("/contacts")
 	public List<ContactForm> viewAllContacts() {
 		return service.viewContacts();
 	}
-	
-	
+
 	@GetMapping("/edit/{contactId}")
 	public ContactForm editContact(@PathVariable Integer contactId) {
 		return service.editContact(contactId);
 	}
-	
+
 	@GetMapping("/delete/{contactId}")
 	public List<ContactForm> deleteContact(@PathVariable Integer contactId) {
 		return service.deleteContact(contactId);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }
