@@ -22,3 +22,6 @@ public class SwaggerConfig {
 				.build();
 	}
 }
+
+
+//http://localhost:9090/swagger-ui.html
